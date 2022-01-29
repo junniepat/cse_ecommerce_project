@@ -38,7 +38,7 @@ const options = {
   family: 4
 };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://junniepat:utchey1995@cluster0.6oqmc.mongodb.net/test?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://junniepat:dKppw5DmSD4zSToi@cluster0.6oqmc.mongodb.net/test?retryWrites=true&w=majority";
 // Cluster0
 
 mongoose
