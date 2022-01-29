@@ -38,6 +38,7 @@ const options = {
 
 const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://junniepat:utchey1995@cluster0.6oqmc.mongodb.net/test?retryWrites=true&w=majority";
 // Cluster0
+
 mongoose
   .connect(
     MONGODB_URL, options
