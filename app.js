@@ -9,12 +9,13 @@ const corsOptions = {
   origin: "https://cse341-patrick.herokuapp.com/",
   optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+
 
 
 const errorController = require('./controllers/error');
 
 const app = express();
+app.use(cors(corsOptions));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
