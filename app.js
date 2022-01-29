@@ -75,6 +75,6 @@ const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://patrick:6BcyuIob7w
 
 
 
-// app.listen(PORT);
+app.listen(PORT);
 
 
