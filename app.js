@@ -11,7 +11,7 @@ const corsOptions = {
   origin: "https://cse341-patrick.herokuapp.com/",
   optionsSuccessStatus: 200
 };
-
+ 
 
 
 const errorController = require('./controllers/error');
