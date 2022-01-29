@@ -55,21 +55,21 @@ const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://patrick:6BcyuIob7w
 //     console.log(err);
 //   });
 
-  mongoose.connect(MONGODB_URL, 
-    {
-      useNewUrlParser: true,
-      // useFindAndModify: false,
-      useUnifiedTopology: true
-    }
-  );
+//   mongoose.connect(MONGODB_URL, 
+//     {
+//       useNewUrlParser: true,
+//       // useFindAndModify: false,
+//       useUnifiedTopology: true
+//     }
+//   );
 
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-  console.log("Connected successfully");
-  app.listen(PORT);
-});
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error: "));
+// db.once("open", function () {
+//   console.log("Connected successfully");
+//   app.listen(PORT);
+// });
 
 // db.products.insert( { item: "card", qty: 15 } )
 
