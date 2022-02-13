@@ -1,6 +1,4 @@
 const path = require('path');
-const PORT = process.env.PORT || 5000;
-
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,7 +12,6 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 const MONGODB_URI = process.env.MONGODB_URL || "mongodb+srv://patrick:6BcyuIob7wGWGPXh@cluster0.6oqmc.mongodb.net/shop?retryWrites=true&w=majority";
-
 
 const app = express();
 const store = new MongoDBStore({
@@ -70,7 +67,7 @@ app.use(errorController.get404);
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(PORT);
+    app.listen(3000);
   })
   .catch(err => {
     console.log(err);
