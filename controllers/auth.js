@@ -10,7 +10,8 @@ const User = require('../models/user');
 const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
-      api_key:'TGIF._8aJLcW9_899989_SQq0My3K--O7AQ.wMz_6T7HS8u_yuyuuyy_M1FT2KssEyEmhAxUdAxOm9JGJAQrSA0Q'
+      api_key:
+        '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'
     }
   })
 );
@@ -58,6 +59,8 @@ exports.postLogin = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
 
+
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).render('auth/login', {
@@ -74,6 +77,7 @@ exports.postLogin = (req, res, next) => {
 
   User.findOne({ email: email })
     .then(user => {
+      console.log('password', user.password)
       if (!user) {
         return res.status(422).render('auth/login', {
           path: '/login',
@@ -190,7 +194,6 @@ exports.postReset = (req, res, next) => {
     const token = buffer.toString('hex');
     User.findOne({ email: req.body.email })
       .then(user => {
-        console.log('user', user)
         if (!user) {
           req.flash('error', 'No account with that email found.');
           return res.redirect('/reset');
@@ -203,7 +206,7 @@ exports.postReset = (req, res, next) => {
         res.redirect('/');
         transporter.sendMail({
           to: req.body.email,
-          from: 'anyaogbuzuru@gmail.com',
+          from: 'shop@node-complete.com',
           subject: 'Password reset',
           html: `
             <p>You requested a password reset</p>
